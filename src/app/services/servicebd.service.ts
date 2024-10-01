@@ -47,10 +47,10 @@ export class ServicebdService {
       })
     })
   }
-  crearTablas(){
+  async crearTablas(){
     try{
-      this.database.executeSql(this.tablaNoticias,[]);
-      this.database.executeSql(this.registroNoticia, []);
+      await this.database.executeSql(this.tablaNoticias,[]);
+      await this.database.executeSql(this.registroNoticia, []);
 
     }catch(e){
       this.presentAlert('Crear tablas', 'Error' + JSON.stringify(e));
