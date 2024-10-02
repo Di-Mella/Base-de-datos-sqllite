@@ -6,11 +6,12 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item-sliding *ngFor=" let x of arregloNoticias">
+    <ion-item-sliding *ngFor="let x of arregloNoticias">
       <ion-item>
-        <ion-label>{{x.titulo}}</ion-label>
-        <ion-label>{{x.texto}}</ion-label>
+        <h2>{{ x.titulo }}</h2>
+        <ion-label>{{ x.texto }}</ion-label>
       </ion-item>
+
       <ion-item-options side="end">
         <ion-item-option (click)="modificar(x)">
           <ion-icon slot="icon-only" name="pencil"></ion-icon>

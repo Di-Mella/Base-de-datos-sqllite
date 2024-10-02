@@ -8,9 +8,9 @@ import { ServicebdService } from 'src/app/services/servicebd.service';
   styleUrls: ['./modificar.page.scss'],
 })
 export class ModificarPage implements OnInit {
-  titulo: string ="";
+  titulo: string = "";
   texto: string = "";
-  id: number=0;
+  id: number = 0;
 
   constructor(private router: Router, private activedrouter: ActivatedRoute, private bd: ServicebdService) {
     this.activedrouter.queryParams.subscribe(res=>{
@@ -20,10 +20,11 @@ export class ModificarPage implements OnInit {
         this.texto = this.router.getCurrentNavigation()?.extras?.state?.['textoEnviado'];
       }
     })
-  }
-  
+   }
+
   ngOnInit() {
   }
+
   modificar(){
     this.bd.modificarNoticia(this.id, this.titulo, this.texto);
   }
