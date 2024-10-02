@@ -5,9 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">agregar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-input label="Titulo Noticia" labelPlacement="floating" placeholder="Ingrese el titulo"
+      [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Texto Noticia" labelPlacement="floating" placeholder="Ingrese texto"
+      [(ngModel)]="texto"></ion-input>
+  </ion-item>
+  <ion-button color="success" (click)="agregar()">Agregar Noticia</ion-button>
+  <ion-button color="warning" [routerLink]="['/listar']">Ir a lista</ion-button>
 </ion-content>
